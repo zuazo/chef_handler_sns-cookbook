@@ -11,5 +11,4 @@ default['chef_handler_sns']['supports'] = {
   'exception' => true
 }
 default['chef_handler_sns']['version'] = nil
-default['chef_handler_sns']['prerelease'] = false
 

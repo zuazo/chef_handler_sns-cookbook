@@ -12,7 +12,6 @@ attribute :body_template, :kind_of => String, :default => nil
 attribute :nokogiri_use_system_libraries, :kind_of => [ TrueClass, FalseClass ], :default => nil
 attribute :supports, :kind_of => Hash, :default => nil
 attribute :version, :kind_of => String, :default => nil
-attribute :prerelease, :kind_of => [ TrueClass, FalseClass ], :default => nil
 
 def initialize(*args)
   super

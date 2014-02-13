@@ -62,9 +62,7 @@ def gem_version
 end
 
 def gem_prerelease
-  new_resource.prerelease(
-    new_resource.prerelease.nil? ? node['chef_handler_sns']['prerelease'] : new_resource.prerelease
-  )
+  gem_version.match(/^[0-9.]+$/) != true
 end
 
 def whyrun_supported?
