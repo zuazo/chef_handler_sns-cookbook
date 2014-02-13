@@ -82,9 +82,11 @@ action :install do
   argument_array[:subject] = subject unless subject.nil?
   argument_array[:body_template] = body_template unless body_template.nil?
 
-  # Install nokogiri dependency
-  ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES'] = 'true' if nokogiri_use_system_libraries
-  @run_context.include_recipe 'xml::ruby'
+  # Install nokogiri dependency if required
+  if version.kind_of?(String) and version.split('.', 2)[0].to_i >= 1
+    ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES'] = 'true' if nokogiri_use_system_libraries
+    @run_context.include_recipe 'xml::ruby'
+  end
 
   # Install the `chef-handler-sns` RubyGem during the compile phase
   if defined?(Chef::Resource::ChefGem)
