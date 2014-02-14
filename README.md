@@ -249,6 +249,18 @@ chef_handler_sns "arn:aws:sns:us-east-1:12341234:MyTopicName" do
 end
 ```
 
+### Installing old versions
+
+If you are not using IAM roles and you don't need to use AWS security tokens, you can use old versions of `chef-handler-sns` (`< 1.0.0`). Those versions does not require `nokogiri`, so they have lighter dependencies and take less time to install.
+
+```ruby
+chef_handler_sns "arn:aws:sns:us-east-1:12341234:MyTopicName" do
+  access_key "***AMAZON-KEY***"
+  secret_key "***AMAZON-SECRET***"
+  version "0.2.6"
+end
+```
+
 Contributing
 ============
 
