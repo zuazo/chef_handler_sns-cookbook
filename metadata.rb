@@ -33,6 +33,13 @@ attribute 'chef_handler_sns/secret_key',
   :required => 'optional',
   :calculated => true
 
+attribute 'chef_handler_sns/token',
+  :display_name => 'chef-handler-sns token',
+  :description => 'AWS security token (read from ohai with IAM roles).',
+  :type => 'string',
+  :required => 'optional',
+  :calculated => true
+
 attribute 'chef_handler_sns/region',
   :display_name => 'chef-handler-sns region',
   :description => 'AWS region.',

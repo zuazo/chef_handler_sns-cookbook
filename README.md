@@ -45,7 +45,7 @@ Attributes
   <tr>
     <td><code>node['chef_handler_sns']['region']</code></td>
     <td>AWS region.</td>
-    <td><em>calculated</em></td>
+    <td><em>calculated from ohai</em></td>
   </tr>
   <tr>
     <td><code>node['chef_handler_sns']['subject']</code></td>
