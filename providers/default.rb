@@ -62,7 +62,7 @@ def gem_version
 end
 
 def gem_prerelease
-  gem_version.match(/^[0-9.]+$/) != true
+  gem_version.kind_of?(String) and gem_version.match(/^[0-9.]+$/) != true
 end
 
 def whyrun_supported?
