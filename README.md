@@ -261,6 +261,20 @@ chef_handler_sns "arn:aws:sns:us-east-1:12341234:MyTopicName" do
 end
 ```
 
+Testing
+=======
+
+## Requirements
+
+* `berkshelf` >= `1.4.0`
+* `chefspec` >= `3.2.0`
+
+## Running the unit tests
+
+```bash
+$ rspec
+```
+
 Contributing
 ============
 
