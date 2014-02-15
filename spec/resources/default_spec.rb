@@ -32,10 +32,6 @@ describe 'chef_handler_sns resource' do
     expect(chef_run).to install_chef_gem('chef-handler-sns')
   end
 
-  it 'should install chef-handler-sns gem' do
-    expect(chef_run).to install_chef_gem('chef-handler-sns')
-  end
-
   it 'should run chef_handler resource' do
     expect(chef_run).to enable_chef_handler('Chef::Handler::Sns').with(
       :source => "#{chef_handler_sns_path}/chef/handler/sns"
