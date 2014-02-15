@@ -1,7 +1,7 @@
 Description
 ===========
 
-Chef cookbook to install and load chef-handler-sns: A simple Chef report handler that reports status of a Chef run through [Amazon SNS](http://aws.amazon.com/sns/). Includes IAM roles support.
+Chef cookbook to install and enable chef-handler-sns: A simple Chef report handler that reports status of a Chef run through [Amazon SNS](http://aws.amazon.com/sns/). Includes IAM roles support.
 
 [Amazon SNS](http://aws.amazon.com/sns/) can send notifications by SMS, email, [Amazon SQS](http://aws.amazon.com/sqs/) queues or to any HTTP endpoint.
 
@@ -79,18 +79,18 @@ Recipes
 
 ## chef_handler_sns::default
 
-Installs and loads the Chef SNS Handler.
+Installs and enables the Chef SNS Handler.
 
 Resources
 =========
 
 ## chef_handler_sns[topic_arn]
 
-Installs and loads the Chef SNS handler.
+Installs and enables the Chef SNS handler.
 
 ### chef_handler_sns actions
 
-* `install`: Installs and loads the handler.
+* `enable`: Installs and enables the Chef Handler.
 
 ### chef_handler_sns attributes
 

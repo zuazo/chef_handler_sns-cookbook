@@ -1,5 +1,5 @@
 
-actions :create
+actions :enable
 
 attribute :topic_arn, :kind_of => String, :name_attribute => true
 attribute :access_key, :kind_of => String, :default => nil
@@ -15,6 +15,6 @@ attribute :version, :kind_of => String, :default => nil
 
 def initialize(*args)
   super
-  @action = :install
+  @action = :enable
 end
 

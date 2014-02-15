@@ -1,5 +1,5 @@
 if defined?(ChefSpec)
-  def install_chef_handler_sns(topic_arn)
-    ChefSpec::Matchers::ResourceMatcher.new(:chef_handler_sns, :install, topic_arn)
+  def enable_chef_handler_sns(topic_arn)
+    ChefSpec::Matchers::ResourceMatcher.new(:chef_handler_sns, :enable, topic_arn)
   end
 end

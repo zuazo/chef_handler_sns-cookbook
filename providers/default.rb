@@ -69,7 +69,7 @@ def whyrun_supported?
   true
 end
 
-action :install do
+action :enable do
 
   # Set `chef-handler-sns` gem arguments
   argument_array = {

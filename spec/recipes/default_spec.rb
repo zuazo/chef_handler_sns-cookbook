@@ -9,7 +9,7 @@ describe 'chef_handler_sns::default' do
   end
 
   it 'should create chef_handler_sns resource' do
-    expect(chef_run).to install_chef_handler_sns(topic_arn).with(
+    expect(chef_run).to enable_chef_handler_sns(topic_arn).with(
       :topic_arn => topic_arn
     )
   end
