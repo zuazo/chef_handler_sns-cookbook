@@ -275,6 +275,20 @@ Testing
 $ rspec
 ```
 
+## ChefSpec matchers
+
+### enable_chef_handler_sns(topic_arn)
+
+Assert that the Chef run enables chef_handler_sns.
+
+```ruby
+topic_arn = "arn:aws:sns:us-east-1:12341234:MyTopicName"
+resource = chef_run.chef_handler_sns(topic_arn)
+expect(resource).to enable_chef_handler_sns(topic_arn).with(
+  :topic_arn => topic_arn
+)
+```
+
 Contributing
 ============
 
