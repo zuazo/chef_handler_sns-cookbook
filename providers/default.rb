@@ -83,7 +83,7 @@ action :install do
   argument_array[:body_template] = body_template unless body_template.nil?
 
   # Install nokogiri dependency if required
-  unless version.kind_of?(String) or version.split('.', 2)[0].to_i < 1
+  unless gem_version.kind_of?(String) and gem_version.split('.', 2)[0].to_i < 1
     ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES'] = 'true' if nokogiri_use_system_libraries
     @run_context.include_recipe 'xml::ruby'
   end
