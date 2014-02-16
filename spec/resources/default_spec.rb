@@ -34,7 +34,11 @@ describe 'chef_handler_sns resource' do
 
   it 'should run chef_handler resource' do
     expect(chef_run).to enable_chef_handler('Chef::Handler::Sns').with(
-      :source => "#{chef_handler_sns_path}/chef/handler/sns"
+      :source => "#{chef_handler_sns_path}/chef/handler/sns",
+      :supports => Mash.new({
+        :exception => true,
+        :report => false
+      })
     )
   end
 
