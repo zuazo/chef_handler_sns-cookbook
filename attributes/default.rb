@@ -9,7 +9,8 @@ default['chef_handler_sns']['body_template'] = nil
 
 default['chef_handler_sns']['nokogiri']['use_system_libraries'] = true
 default['chef_handler_sns']['supports'] = {
-  'exception' => true
+  'exception' => true,
+  'report' => false
 }
 default['chef_handler_sns']['version'] = nil
 
