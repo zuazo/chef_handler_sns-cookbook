@@ -5,7 +5,7 @@ end
 
 def access_key
   new_resource.access_key(
-    new_resource.nil? ? node['chef_handler_sns']['access_key'] : new_resource.access_key
+    new_resource.access_key.nil? ? node['chef_handler_sns']['access_key'] : new_resource.access_key
   )
 end
 
@@ -49,9 +49,13 @@ def nokogiri_use_system_libraries
   )
 end
 
-def supports
+def chef_handler_supports
   new_resource.supports(
-    new_resource.supports.nil? ? node['chef_handler_sns']['supports'] : new_resource.supports
+    if new_resource.supports.nil? or new_resource.supports.empty?
+      node['chef_handler_sns']['supports'].to_hash
+    else
+      new_resource.supports
+    end
   )
 end
 
@@ -112,7 +116,7 @@ action :enable do
     chef_handler 'Chef::Handler::Sns' do
       source "#{sns_handler_path}/chef/handler/sns"
       arguments argument_array
-      supports supports
+      supports chef_handler_supports
       action :enable
     end
   end
