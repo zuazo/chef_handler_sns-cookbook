@@ -34,7 +34,7 @@ Attributes
   </tr>
   <tr>
     <td><code>node['chef_handler_sns']['secret_key']</code></td>
-    <td>AWS secret key (required, but will try to read it from ohai with IAM roles).</td>
+    <td>AWS secret key (required, but will try to read it from ohai with IAM roles). We do not recomend using this attribute, it is better to use [the LWRP](#chef_handler_snstopic_arn).</td>
     <td><em>calculated from ohai with IAM roles</em></td>
   </tr>
   <tr>
@@ -58,7 +58,7 @@ Attributes
     <td><em>calculated</em></td>
   </tr>
   <tr>
-    <td><code>node['chef_handler_sns']['nokogiri']['use_system_libraries']</code></td>
+    <td><code>node['chef_handler_sns']['nokogiri']<br/>&nbps;&nbps;&nbps;&nbps;['use_system_libraries']</code></td>
     <td>Prevent nokogiri from compiling libxml2 and libxslt and force to use the system libraries. Should decrease the installation time.</td>
     <td><code>true</code></td>
   </tr>
