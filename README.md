@@ -65,7 +65,7 @@ Attributes
   <tr>
     <td><code>node['chef_handler_sns']['supports']</code></td>
     <td>Type of Chef Handler to register as, ie <code>:report</code>, <code>:exception</code> or <code>both</code>.</td>
-    <td><code>{ "exception" => true }</code></td>
+    <td><code>{<br>&nbsp;&nbsp;"exception" => true<br/>}</code></td>
   </tr>
   <tr>
     <td><code>node['chef_handler_sns']['version']</code></td>
@@ -138,7 +138,7 @@ Installs and enables the Chef SNS handler.
   <tr>
     <td>nokogiri_use_system_libraries</td>
     <td>Prevent nokogiri from compiling libxml2 and libxslt and force to use the system libraries. Should decrease the installation time.</td>
-    <td><code>node['chef_handler_sns']['nokogiri']['use_system_libraries']</code></td>
+    <td><code>node['chef_handler_sns']['nokogiri']</code><br/>&nbsp;&nbsp;&nbsp;&nbsp;<code>['use_system_libraries']</code></td>
   </tr>
   <tr>
     <td>supports</td>
