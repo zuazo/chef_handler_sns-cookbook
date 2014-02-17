@@ -58,7 +58,7 @@ Attributes
     <td><em>calculated</em></td>
   </tr>
   <tr>
-    <td><code>node['chef_handler_sns']['nokogiri']<br/>&nbps;&nbps;&nbps;&nbps;['use_system_libraries']</code></td>
+    <td><code>node['chef_handler_sns']['nokogiri']</code><br/>&nbps;&nbps;&nbps;&nbps;<code>['use_system_libraries']</code></td>
     <td>Prevent nokogiri from compiling libxml2 and libxslt and force to use the system libraries. Should decrease the installation time.</td>
     <td><code>true</code></td>
   </tr>
