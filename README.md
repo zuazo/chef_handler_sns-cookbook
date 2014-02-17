@@ -34,7 +34,7 @@ Attributes
   </tr>
   <tr>
     <td><code>node['chef_handler_sns']['secret_key']</code></td>
-    <td>AWS secret key (required, but will try to read it from ohai with IAM roles). We do not recomend using this attribute, it is better to use [the LWRP](#chef_handler_snstopic_arn).</td>
+    <td>AWS secret key (required, but will try to read it from ohai with IAM roles). We do not recomend using this attribute, it is better to use <a href="#chef_handler_snstopic_arn">the LWRP</a>.</td>
     <td><em>calculated from ohai with IAM roles</em></td>
   </tr>
   <tr>
