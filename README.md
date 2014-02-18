@@ -5,6 +5,8 @@ Chef cookbook to install and enable chef-handler-sns: A simple Chef report handl
 
 [Amazon SNS](http://aws.amazon.com/sns/) can send notifications by SMS, email, [Amazon SQS](http://aws.amazon.com/sqs/) queues or to any HTTP endpoint.
 
+[![Build Status](https://travis-ci.org/onddo/chef_handler_sns-cookbook.png)](https://travis-ci.org/onddo/chef_handler_sns-cookbook)
+
 Requirements
 ============
 
