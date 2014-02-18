@@ -266,13 +266,25 @@ Testing
 
 ## Requirements
 
-* `berkshelf` >= `1.4.0`
-* `chefspec` >= `3.2.0`
+* `berkshelf` ~> `2.0`
+* `chefspec` ~> `3.2`
 * `test-kitchen`
 * `vagrant`
 * `kitchen-vagrant` >= `0.10.0`
+* `foodcritic` ~> `3.0`
+
+## Running the syntax style tests
+
+```bash
+$ rake style
+```
 
 ## Running the integration tests
+
+```bash
+$ rake integration
+```
+Or:
 
 ```bash
 $ kitchen test
@@ -281,6 +293,12 @@ $ kitchen verify
 ```
 
 ## Running the unit tests
+
+```bash
+$ rake unit
+```
+
+Or:
 
 ```bash
 $ rspec

@@ -3,8 +3,15 @@
 
 source 'https://rubygems.org'
 
-gem 'berkshelf', '>= 1.4.0'
-gem 'chefspec', '~> 3.2'
+group :test, :development do
+  gem 'rake'
+end
+
+group :test do
+  gem 'berkshelf', '~> 2.0'
+  gem 'chefspec', '~> 3.2'
+  gem 'foodcritic', '~> 3.0'
+end
 
 group :integration do
   gem 'test-kitchen'
