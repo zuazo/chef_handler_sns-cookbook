@@ -1,7 +1,7 @@
 Description
 ===========
 
-Chef cookbook to install and enable chef-handler-sns: A simple Chef report handler that reports status of a Chef run through [Amazon SNS](http://aws.amazon.com/sns/). Includes IAM roles support.
+Chef cookbook to install and enable [chef-handler-sns](http://onddo.github.io/chef-handler-sns/): A simple Chef report handler that reports status of a Chef run through [Amazon SNS](http://aws.amazon.com/sns/). Includes IAM roles support.
 
 [Amazon SNS](http://aws.amazon.com/sns/) can send notifications by SMS, email, [Amazon SQS](http://aws.amazon.com/sqs/) queues or to any HTTP endpoint.
 
