@@ -43,12 +43,6 @@ def body_template
   )
 end
 
-def nokogiri_use_system_libraries
-  new_resource.nokogiri_use_system_libraries(
-    new_resource.nokogiri_use_system_libraries.nil? ? node['chef_handler_sns']['nokogiri']['use_system_libraries'] : new_resource.nokogiri_use_system_libraries
-  )
-end
-
 def chef_handler_supports
   new_resource.supports(
     if new_resource.supports.nil? or new_resource.supports.empty?
@@ -88,7 +82,6 @@ action :enable do
 
   # Install nokogiri dependency if required
   unless gem_version.kind_of?(String) and gem_version.split('.', 2)[0].to_i < 1
-    ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES'] = 'true' if nokogiri_use_system_libraries
     @run_context.include_recipe 'xml::ruby'
   end
 

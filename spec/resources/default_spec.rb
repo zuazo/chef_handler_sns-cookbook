@@ -23,11 +23,6 @@ describe 'chef_handler_sns resource' do
     expect(chef_run).to include_recipe('xml::ruby')
   end
 
-  it 'should set NOKOGIRI_USE_SYSTEM_LIBRARIES environment variable' do
-    chef_run
-    expect(ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES']).to eq('true')
-  end
-
   it 'should install chef-handler-sns gem' do
     expect(chef_run).to install_chef_gem('chef-handler-sns')
   end

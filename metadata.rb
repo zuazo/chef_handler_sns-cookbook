@@ -61,14 +61,6 @@ attribute 'chef_handler_sns/body_template',
   :required => 'optional',
   :calculated => true
 
-attribute 'chef_handler_sns/nokogiri/use_system_libraries',
-  :display_name => 'nokogiri use system libraries',
-  :description => 'Prevent nokogiri from compiling libxml2 and libxslt and force to use the system libraries. Should decrease the installation time.',
-  :type => 'string',
-  :required => 'optional',
-  :choice => [ 'true', 'false' ],
-  :default => 'true'
-
 attribute 'chef_handler_sns/supports',
   :display_name => 'chef-handler supports',
   :description => 'Type of Chef Handler to register as, ie :report, :exception or both.',
