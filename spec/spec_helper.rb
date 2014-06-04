@@ -1,3 +1,4 @@
+require 'rspec/expectations' # https://github.com/rubygems/rubygems/issues/853
 require 'chefspec'
 require 'chefspec/berkshelf'
 require_relative 'support/matchers'
@@ -16,7 +17,7 @@ RSpec.configure do |config|
 
   # ChefSpec configuration
   config.log_level = :fatal
-  config.color_enabled = true
+  config.color = true
   config.formatter = :documentation
 end
 
