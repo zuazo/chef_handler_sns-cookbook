@@ -86,7 +86,9 @@ action :enable do
   end
 
   # Install the `chef-handler-sns` RubyGem during the compile phase
-  if defined?(Chef::Resource::ChefGem)
+  if defined?(OpsWorks::InternalGems)
+    OpsWorks::InternalGems.internal_gem_package('chef-handler-sns')
+  elsif defined?(Chef::Resource::ChefGem)
     chef_gem 'chef-handler-sns' do
       version gem_version
       options(:prerelease => true) if gem_prerelease
@@ -100,9 +102,26 @@ action :enable do
   end
 
   # Get the installed `chef-handler-sns` gem path
-  sns_handler_path = Gem::Specification.respond_to?('find_by_name') ?
-    Gem::Specification.find_by_name('chef-handler-sns').lib_dirs_glob :
-    Gem.all_load_paths.grep(/chef-handler-sns/).first
+  sns_handler_path = nil
+  if defined?(Bundler) and ENV.has_key?('BUNDLE_BIN_PATH')
+    # Gem::Specification#each_spec would be better, but requires >= 1.9.2
+    bundle_path = ::File.join(Bundler.bundle_path.to_s, 'specifications')
+    Dir[::File.join(bundle_path, '*.gemspec')].each do |path|
+      spec = Gem::Specification.load(path.untaint)
+      if spec.name == 'chef-handler-sns'
+        sns_handler_path = spec.lib_dirs_glob
+      end
+    end
+    if sns_handler_path.nil?
+      Chef::Application.fatal!("chef-handler-sns not found inside Bundler path: #{bundle_path}")
+    end
+  else
+    sns_handler_path = if Gem::Specification.respond_to?('find_by_name')
+      Gem::Specification.find_by_name('chef-handler-sns').lib_dirs_glob
+    else
+      Gem.all_load_paths.grep(/chef-handler-sns/).first
+    end
+  end
 
   converge_by("Install #{new_resource}") do
     # Then activate the handler with the `chef_handler` LWRP
