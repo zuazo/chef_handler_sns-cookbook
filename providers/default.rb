@@ -1,3 +1,4 @@
+require 'chef/application'
 
 def topic_arn
   new_resource.topic_arn
@@ -103,7 +104,7 @@ action :enable do
 
   # Get the installed `chef-handler-sns` gem path
   sns_handler_path = nil
-  if defined?(Bundler) and ENV.has_key?('BUNDLE_BIN_PATH')
+  if defined?(Bundler) and ENV.has_key?('BUNDLE_BIN_PATH') and !defined?(ChefSpec)
     # Gem::Specification#each_spec would be better, but requires >= 1.9.2
     bundle_path = ::File.join(Bundler.bundle_path.to_s, 'specifications')
     Dir[::File.join(bundle_path, '*.gemspec')].each do |path|
