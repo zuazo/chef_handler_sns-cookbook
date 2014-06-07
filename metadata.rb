@@ -4,7 +4,7 @@ maintainer_email 'team@onddo.com'
 license          'Apache 2.0'
 description      'Installs and enables chef-handler-sns: A simple Chef report handler that reports status of a Chef run through Amazon SNS. Includes IAM roles support. Amazon SNS can send notifications by SMS, email, Amazon SQS queues or to any HTTP endpoint.'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.2.0' # WiP
+version          '1.0.0'
 
 depends 'xml'
 depends 'chef_handler'
