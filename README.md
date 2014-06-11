@@ -136,7 +136,7 @@ Installs and enables the Chef SNS handler.
   </tr>
   <tr>
     <td>supports</td>
-    <td>Type of Chef Handler to register as, ie <code>:report</code>, <code>:exception</code> or <code>both</code>.</td>
+    <td>Type of Chef Handler to register as, ie <code>:report</code>, <code>:exception</code> or both.</td>
     <td><code>node['chef_handler_sns']['supports']</code></td>
   </tr>
   <tr>
