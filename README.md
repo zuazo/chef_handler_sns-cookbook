@@ -63,7 +63,7 @@ Attributes
   </tr>
   <tr>
     <td><code>node['chef_handler_sns']['supports']</code></td>
-    <td>Type of Chef Handler to register as, ie <code>:report</code>, <code>:exception</code> or <code>both</code>.</td>
+    <td>Type of Chef Handler to register as, ie <code>:report</code>, <code>:exception</code> or both.</td>
     <td><code>{<br>&nbsp;&nbsp;"exception" => true<br/>}</code></td>
   </tr>
   <tr>
