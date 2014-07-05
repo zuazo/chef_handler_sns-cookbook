@@ -35,7 +35,7 @@ attribute 'chef_handler_sns/secret_key',
 
 attribute 'chef_handler_sns/token',
   :display_name => 'chef-handler-sns token',
-  :description => 'AWS security token (read from ohai with IAM roles).',
+  :description => 'AWS security token (read from ohai with IAM roles). Set to false to disable the token detected by ohai.',
   :type => 'string',
   :required => 'optional',
   :calculated => true
