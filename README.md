@@ -116,7 +116,7 @@ Installs and enables the Chef SNS handler.
   </tr>
   <tr>
     <td>token</td>
-    <td>AWS security token (read from ohai with IAM roles). Set to `false` to disable the token detected by ohai.</td>
+    <td>AWS security token (read from ohai with IAM roles). Set to <code>false</code> to disable the token detected by ohai.</td>
     <td><code>node['chef_handler_sns']['token']</code></td>
   </tr>
   <tr>
