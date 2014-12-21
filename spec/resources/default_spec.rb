@@ -4,7 +4,7 @@ describe 'chef_handler_sns resource' do
   let(:topic_arn) { 'arn:aws:sns:us-east-1:12341234:MyTopicName' }
   let(:chef_handler_sns_path) { '/tmp/chef-handler-sns' }
   let(:chef_run) do
-    ChefSpec::Runner.new(
+    ChefSpec::SoloRunner.new(
         platform: 'ubuntu', version: '12.04',
         step_into: ['chef_handler_sns']
       ) do |node|
