@@ -15,8 +15,9 @@ describe 'chef_handler_sns resource' do
   before do
     gemspec = Gem::Specification.new
     gemspec.name = 'chef-handler-sns'
-    gemspec.stub(:lib_dirs_glob).and_return(chef_handler_sns_path)
-    Gem::Specification.stub(:find_by_name).with('chef-handler-sns').and_return(gemspec)
+    allow(gemspec).to receive(:lib_dirs_glob).and_return(chef_handler_sns_path)
+    allow(Gem::Specification)
+      .to receive(:find_by_name).with('chef-handler-sns').and_return(gemspec)
   end
 
   it 'should include xml::ruby recipe' do
