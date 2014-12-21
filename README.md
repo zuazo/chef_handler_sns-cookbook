@@ -20,58 +20,17 @@ Requirements
 Attributes
 ==========
 
-<table>
-  <tr>
-    <td>Attribute</td>
-    <td>Description</td>
-    <td>Default</td>
-  </tr>
-  <tr>
-    <td><code>node['chef_handler_sns']['topic_arn']</code></td>
-    <td>AWS topic ARN name (required).</td>
-    <td><em>required</em></td>
-  </tr>
-  <tr>
-    <td><code>node['chef_handler_sns']['access_key']</code></td>
-    <td>AWS access key (required, but will try to read it from ohai with IAM roles).</td>
-    <td><em>calculated from ohai with IAM roles</em></td>
-  </tr>
-  <tr>
-    <td><code>node['chef_handler_sns']['secret_key']</code></td>
-    <td>AWS secret key (required, but will try to read it from ohai with IAM roles). We do not recomend using this attribute, it is better to use <a href="#chef_handler_snstopic_arn">the LWRP</a>.</td>
-    <td><em>calculated from ohai with IAM roles</em></td>
-  </tr>
-  <tr>
-    <td><code>node['chef_handler_sns']['token']</code></td>
-    <td>AWS security token (read from ohai with IAM roles). Set to <code>false</code> to disable the token detected by ohai.</td>
-    <td><em>calculated from ohai with IAM roles</em></td>
-  </tr>
-  <tr>
-    <td><code>node['chef_handler_sns']['region']</code></td>
-    <td>AWS region.</td>
-    <td><em>calculated from ohai</em></td>
-  </tr>
-  <tr>
-    <td><code>node['chef_handler_sns']['subject']</code></td>
-    <td>Message subject string in erubis format.</td>
-    <td><em>calculated</em></td>
-  </tr>
-  <tr>
-    <td><code>node['chef_handler_sns']['body_template']</code></td>
-    <td>Full path of an erubis template file to use for the message body.</td>
-    <td><em>calculated</em></td>
-  </tr>
-  <tr>
-    <td><code>node['chef_handler_sns']['supports']</code></td>
-    <td>Type of Chef Handler to register as, ie <code>:report</code>, <code>:exception</code> or both.</td>
-    <td><code>{<br>&nbsp;&nbsp;"exception" => true<br/>}</code></td>
-  </tr>
-  <tr>
-    <td><code>node['chef_handler_sns']['version']</code></td>
-    <td>chef-handler-sns gem version to install.</td>
-    <td><em>latest stable</em></td>
-  </tr>
-</table>
+| Attribute                                   | Default                               | Description                       |
+|:--------------------------------------------|:--------------------------------------|:----------------------------------|
+| `node['chef_handler_sns']['topic_arn']`     | *required*                            | AWS topic ARN name (required).
+| `node['chef_handler_sns']['access_key']`    | *calculated from ohai with IAM roles* | AWS access key (required, but will try to read it from ohai with IAM roles).
+| `node['chef_handler_sns']['secret_key']`    | *calculated from ohai with IAM roles* | AWS secret key (required, but will try to read it from ohai with IAM roles). We do not recomend using this attribute, it is better to use [the LWRP](#chef_handler_snstopic_arn).
+| `node['chef_handler_sns']['token']`         | *calculated from ohai with IAM roles* | AWS security token (read from ohai with IAM roles). Set to `false` to disable the token detected by ohai.
+| `node['chef_handler_sns']['region']`        | *calculated from ohai*                | AWS region.
+| `node['chef_handler_sns']['subject']`       | *calculated*                          | Message subject string in erubis format.
+| `node['chef_handler_sns']['body_template']` | *calculated*                          | Full path of an erubis template file to use for the message body.
+| `node['chef_handler_sns']['supports']`      | `{ 'exception' => true }`             | Type of Chef Handler to register as, ie `:report`, `:exception` or both.
+| `node['chef_handler_sns']['version']`       | *latest stable*                       | chef-handler-sns gem version to install.
 
 Recipes
 =======
@@ -87,64 +46,23 @@ Resources
 
 Installs and enables the Chef SNS handler.
 
-### chef_handler_sns actions
+### chef_handler_sns Actions
 
 * `enable`: Installs and enables the Chef Handler.
 
-### chef_handler_sns attributes
+### chef_handler_sns Parameters
 
-<table>
-  <tr>
-    <td>Attribute</td>
-    <td>Description</td>
-    <td>Default</td>
-  </tr>
-  <tr>
-    <td>topic_arn</td>
-    <td>AWS topic ARN name (required).</td>
-    <td><em>resource name</em></td>
-  </tr>
-  <tr>
-    <td>access_key</td>
-    <td>AWS access key (required, but will try to read it from ohai with IAM roles).</td>
-    <td><code>node['chef_handler_sns']['access_key']</code></td>
-  </tr>
-  <tr>
-    <td>secret_key</td>
-    <td>AWS secret key (required, but will try to read it from ohai with IAM roles).</td>
-    <td><code>node['chef_handler_sns']['secret_key']</code></td>
-  </tr>
-  <tr>
-    <td>token</td>
-    <td>AWS security token (read from ohai with IAM roles). Set to <code>false</code> to disable the token detected by ohai.</td>
-    <td><code>node['chef_handler_sns']['token']</code></td>
-  </tr>
-  <tr>
-    <td>region</td>
-    <td>AWS region.</td>
-    <td><code>node['chef_handler_sns']['region']</code></td>
-  </tr>
-  <tr>
-    <td>subject</td>
-    <td>Message subject string in erubis format.</td>
-    <td><code>node['chef_handler_sns']['subject']</code></td>
-  </tr>
-  <tr>
-    <td>body_template</td>
-    <td>Full path of an erubis template file to use for the message body.</td>
-    <td><code>node['chef_handler_sns']['body_template']</code></td>
-  </tr>
-  <tr>
-    <td>supports</td>
-    <td>Type of Chef Handler to register as, ie <code>:report</code>, <code>:exception</code> or both.</td>
-    <td><code>node['chef_handler_sns']['supports']</code></td>
-  </tr>
-  <tr>
-    <td>version</td>
-    <td>chef-handler-sns gem version to install.</td>
-    <td><code>node['chef_handler_sns']['version']</code></td>
-  </tr>
-</table>
+| Parameter     | Default                                     | Description                       |
+|:--------------|:--------------------------------------------|:----------------------------------|
+| topic_arn     | *resource name*                             | AWS topic ARN name (required).
+| access_key    | `node['chef_handler_sns']['access_key']`    | AWS access key (required, but will try to read it from ohai with IAM roles).
+| secret_key    | `node['chef_handler_sns']['secret_key']`    | AWS secret key (required, but will try to read it from ohai with IAM roles).
+| token         | `node['chef_handler_sns']['token']`         | AWS security token (read from ohai with IAM roles). Set to `false` to disable the token detected by ohai.
+| region        | `node['chef_handler_sns']['region']`        | AWS region.
+| subject       | `node['chef_handler_sns']['subject']`       | Message subject string in erubis format.
+| body_template | `node['chef_handler_sns']['body_template']` | Full path of an erubis template file to use for the message body.
+| supports      | `node['chef_handler_sns']['supports']`      | Type of Chef Handler to register as, ie `:report`, `:exception` or both.
+| version       | `node['chef_handler_sns']['version']`       | chef-handler-sns gem version to install.
 
 AWS Credentials permissions
 ===========================
@@ -181,13 +99,13 @@ First, you need to include this cookbook as a dependency in your cookbook:
 
 ```ruby
 # metadata.rb
-depends "chef_handler_sns"
+depends 'chef_handler_sns'
 ```
 
 ```ruby
 # in your recipe
-node["chef_handler_sns"]["topic_arn"] = "arn:aws:sns:us-east-1:12341234:MyTopicName"
-include_recipe "chef_handler_sns::default"
+node['chef_handler_sns']['topic_arn'] = 'arn:aws:sns:us-east-1:12341234:MyTopicName'
+include_recipe 'chef_handler_sns::default'
 ```
 
 ### Using the LWRP from a Cookbook Recipe
@@ -196,12 +114,12 @@ You can also use the `chef_handler_sns` LWRP directly instead of including the r
 
 ```ruby
 # metadata.rb
-depends "chef_handler_sns"
+depends 'chef_handler_sns'
 ```
 
 ```ruby
 # in your recipe
-chef_handler_sns "arn:aws:sns:us-east-1:12341234:MyTopicName"
+chef_handler_sns 'arn:aws:sns:us-east-1:12341234:MyTopicName'
 ```
 
 ### Including in the Run List
@@ -232,14 +150,14 @@ If you are using Amazon EC2 without IAM roles or machines from other providers o
 
 ```ruby
 # metadata.rb
-depends "chef_handler_sns"
+depends 'chef_handler_sns'
 ```
 
 ```ruby
 # in your recipe
-chef_handler_sns "arn:aws:sns:us-east-1:12341234:MyTopicName" do
-  access_key "***AMAZON-KEY***"
-  secret_key "***AMAZON-SECRET***"
+chef_handler_sns 'arn:aws:sns:us-east-1:12341234:MyTopicName' do
+  access_key '***AMAZON-KEY***'
+  secret_key '***AMAZON-SECRET***'
 end
 ```
 
@@ -248,94 +166,32 @@ end
 If you are not using IAM roles and you don't need to use AWS security tokens, you can use old versions of `chef-handler-sns` (`< 1.0.0`). Those versions does not require `nokogiri`, so they have lighter dependencies and take less time to install.
 
 ```ruby
-chef_handler_sns "arn:aws:sns:us-east-1:12341234:MyTopicName" do
-  access_key "***AMAZON-KEY***"
-  secret_key "***AMAZON-SECRET***"
-  version "0.2.6"
+chef_handler_sns 'arn:aws:sns:us-east-1:12341234:MyTopicName' do
+  access_key '***AMAZON-KEY***'
+  secret_key '***AMAZON-SECRET***'
+  version '0.2.6'
 end
 ```
 
 Testing
 =======
 
-## Requirements
-
-* `chef-sugar`
-* `berkshelf`
-* `chefspec`
-* `test-kitchen`
-* `vagrant-wrapper`
-* `kitchen-vagrant`
-* `foodcritic`
-* `rubocop`
-
-## Running the syntax style tests
-
-```bash
-$ rake style
-```
-
-## Running the integration tests
-
-```bash
-$ rake integration
-```
-Or:
-
-```bash
-$ kitchen test
-$ kitchen verify
-[...]
-```
-
-## Running the unit tests
-
-```bash
-$ rake unit
-```
-
-Or:
-
-```bash
-$ rspec
-```
-
-## ChefSpec matchers
-
-### chef_handler_sns(topic_arn)
-
-Helper method for locating a `chef_handler_sns` resource in the collection.
-
-```ruby
-topic_arn = "arn:aws:sns:us-east-1:12341234:MyTopicName"
-resource = chef_run.chef_handler_sns(topic_arn)
-expect(resource).to notify('service[apache2]').to(:reload)
-```
-
-### enable_chef_handler_sns(topic_arn)
-
-Assert that the Chef run enables chef_handler_sns.
-
-```ruby
-topic_arn = "arn:aws:sns:us-east-1:12341234:MyTopicName"
-resource = chef_run.chef_handler_sns(topic_arn)
-expect(resource).to enable_chef_handler_sns(topic_arn).with(
-  :topic_arn => topic_arn
-)
-```
+See [TESTING.md](https://github.com/onddo/chef_handler_sns-cookbook/blob/master/TESTING.md).
 
 Contributing
 ============
 
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
+Please do not hesitate to [open an issue](https://github.com/onddo/chef_handler_sns-cookbook/issues/new) with any questions or problems.
+
+See [CONTRIBUTING.md](https://github.com/onddo/chef_handler_sns-cookbook/blob/master/CONTRIBUTING.md).
+
+TODO
+====
+
+See [TODO.md](https://github.com/onddo/chef_handler_sns-cookbook/blob/master/TODO.md).
 
 License and Author
-=====================
+==================
 
 |                      |                                          |
 |:---------------------|:-----------------------------------------|
