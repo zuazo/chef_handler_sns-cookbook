@@ -260,13 +260,14 @@ Testing
 
 ## Requirements
 
-* `chef-sugar`: required by `xml` `>= 1.2.6` cookbook
-* `berkshelf` `~> 2.0`
-* `chefspec` `~> 4.0`
-* `test-kitchen` `~> 1.2`
-* `vagrant` `~> 0.15`
-* `kitchen-vagrant` `>= 0.10.0`
-* `foodcritic` `~> 3.0`
+* `chef-sugar`
+* `berkshelf`
+* `chefspec`
+* `test-kitchen`
+* `vagrant-wrapper`
+* `kitchen-vagrant`
+* `foodcritic`
+* `rubocop`
 
 ## Running the syntax style tests
 

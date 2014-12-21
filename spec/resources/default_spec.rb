@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require_relative '../spec_helper'
 
 describe 'chef_handler_sns resource' do
@@ -20,22 +22,21 @@ describe 'chef_handler_sns resource' do
       .to receive(:find_by_name).with('chef-handler-sns').and_return(gemspec)
   end
 
-  it 'should include xml::ruby recipe' do
+  it 'includes xml::ruby recipe' do
     expect(chef_run).to include_recipe('xml::ruby')
   end
 
-  it 'should install chef-handler-sns gem' do
+  it 'installs chef-handler-sns gem' do
     expect(chef_run).to install_chef_gem('chef-handler-sns')
   end
 
-  it 'should run chef_handler resource' do
+  it 'runs chef_handler resource' do
     expect(chef_run).to enable_chef_handler('Chef::Handler::Sns').with(
-      :source => "#{chef_handler_sns_path}/chef/handler/sns",
-      :supports => Mash.new({
-        :exception => true,
-        :report => false
-      })
+      source: "#{chef_handler_sns_path}/chef/handler/sns",
+      supports: Mash.new(
+        exception: true,
+        report: false
+      )
     )
   end
-
 end

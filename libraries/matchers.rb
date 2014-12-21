@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 if defined?(ChefSpec)
   if ChefSpec.respond_to?(:define_matcher)
     # ChefSpec >= 4.1
@@ -9,6 +11,8 @@ if defined?(ChefSpec)
   end
 
   def enable_chef_handler_sns(topic_arn)
-    ChefSpec::Matchers::ResourceMatcher.new(:chef_handler_sns, :enable, topic_arn)
+    ChefSpec::Matchers::ResourceMatcher.new(
+      :chef_handler_sns, :enable, topic_arn
+    )
   end
 end

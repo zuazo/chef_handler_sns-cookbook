@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require_relative '../spec_helper'
 
 describe 'chef_handler_sns::default' do
@@ -8,9 +10,9 @@ describe 'chef_handler_sns::default' do
     end.converge(described_recipe)
   end
 
-  it 'should create chef_handler_sns resource' do
+  it 'creates chef_handler_sns resource' do
     expect(chef_run).to enable_chef_handler_sns(topic_arn).with(
-      :topic_arn => topic_arn
+      topic_arn: topic_arn
     )
   end
 end

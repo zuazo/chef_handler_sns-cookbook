@@ -1,3 +1,4 @@
+# encoding: UTF-8
 
 default['chef_handler_sns']['topic_arn'] = nil
 default['chef_handler_sns']['access_key'] = nil
@@ -12,4 +13,3 @@ default['chef_handler_sns']['supports'] = {
   'report' => false
 }
 default['chef_handler_sns']['version'] = nil
-

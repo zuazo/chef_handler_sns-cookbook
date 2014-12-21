@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require 'rspec/expectations' # https://github.com/rubygems/rubygems/issues/853
 require 'chefspec'
 require 'chefspec/berkshelf'
