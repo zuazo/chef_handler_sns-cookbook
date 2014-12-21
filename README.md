@@ -301,6 +301,16 @@ $ rspec
 
 ## ChefSpec matchers
 
+### chef_handler_sns(topic_arn)
+
+Helper method for locating a `chef_handler_sns` resource in the collection.
+
+```ruby
+topic_arn = "arn:aws:sns:us-east-1:12341234:MyTopicName"
+resource = chef_run.chef_handler_sns(topic_arn)
+expect(resource).to notify('service[apache2]').to(:reload)
+```
+
 ### enable_chef_handler_sns(topic_arn)
 
 Assert that the Chef run enables chef_handler_sns.
