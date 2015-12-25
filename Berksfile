@@ -2,8 +2,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-source 'https://supermarket.chef.io'
-my_cookbook = ::File.basename(Dir.pwd).sub(/[-_]?cookbook$/, '')
+source 'https://supermarket.getchef.com'
+my_cookbook = 'chef_handler_sns'
 
 # Berkshelf helper to include a local cookbook from disk.
 #
