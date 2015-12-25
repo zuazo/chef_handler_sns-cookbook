@@ -7,6 +7,9 @@ source 'https://rubygems.org'
 group :test do
   gem 'rake'
   gem 'berkshelf', '~> 3.1'
+  if RUBY_VERSION < '2'
+    gem 'varia_model', '~> 0.4.0'
+  end
 end
 
 group :style do
