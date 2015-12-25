@@ -60,6 +60,12 @@ def gem_version
   )
 end
 
+def gem_mirror_url
+  new_resource.mirror_url(
+    new_resource.mirror_url.nil? ? node['chef_handler_sns']['mirror_url'] : new_resource.mirror_url
+  )
+end
+
 def gem_prerelease
   gem_version.kind_of?(String) and gem_version.match(/^[0-9.]+$/) != true
 end
@@ -91,7 +97,23 @@ action :enable do
   end
 
   # Install the `chef-handler-sns` RubyGem during the compile phase
-  if defined?(OpsWorks::InternalGems)
+  if gem_mirror_url.is_a?(String) && gem_version.is_a?(String)
+    chef_handler_sns_file = "chef-handler-sns-#{gem_version}.gem"
+    file_path = ::File.join(
+      Chef::Config[:file_cache_path],
+      chef_handler_sns_file
+    )
+    file_url = "#{gem_mirror_url}/#{chef_handler_sns_file}"
+
+    remote_file file_path do
+      source file_url
+    end.run_action(:create)
+
+    gem_package 'chef-handler-sns' do
+      source file_path
+      options gem_options
+    end.run_action(:install)
+  elsif defined?(OpsWorks::InternalGems)
     OpsWorks::InternalGems.internal_gem_package('chef-handler-sns')
   elsif defined?(Chef::Resource::ChefGem)
     chef_gem 'chef-handler-sns' do

@@ -11,6 +11,7 @@ attribute :body_template, :kind_of => String, :default => nil
 
 attribute :supports, :kind_of => Hash, :default => nil
 attribute :version, :kind_of => String, :default => nil
+attribute :mirror_url, :kind_of => String, :default => nil
 
 def initialize(*args)
   super

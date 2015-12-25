@@ -12,4 +12,5 @@ default['chef_handler_sns']['supports'] = {
   'report' => false
 }
 default['chef_handler_sns']['version'] = nil
+default['chef_handler_sns']['mirror_url'] = nil
 

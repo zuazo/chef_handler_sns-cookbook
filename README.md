@@ -71,6 +71,11 @@ Attributes
     <td>chef-handler-sns gem version to install.</td>
     <td><em>latest stable</em></td>
   </tr>
+  <tr>
+    <td><code>node['chef_handler_sns']['mirror_url']</code></td>
+    <td>chef-handler-sns mirror to download the gem from. For cases where you do not want to use RubyGems.</td>
+    <td><code>nil</code></td>
+  </tr>
 </table>
 
 Recipes
@@ -143,6 +148,11 @@ Installs and enables the Chef SNS handler.
     <td>version</td>
     <td>chef-handler-sns gem version to install.</td>
     <td><code>node['chef_handler_sns']['version']</code></td>
+  </tr>
+  <tr>
+    <td>mirror_url</td>
+    <td>chef-handler-sns mirror to download the gem from. For cases where you do not want to use RubyGems.</td>
+    <td><code>node['chef_handler_sns']['mirror_url']</code></td>
   </tr>
 </table>
 

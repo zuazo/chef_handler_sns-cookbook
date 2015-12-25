@@ -74,3 +74,12 @@ attribute 'chef_handler_sns/version',
   :type => 'string',
   :required => 'optional',
   :calculated => true
+
+attribute 'chef_handler_sns/mirror_url',
+  :display_name => 'chef-handler-sns mirror url',
+  :description =>
+    'chef-handler-sns mirror to download the gem from. For cases where you do '\
+    'not want to use RubyGems.',
+  :type => 'string',
+  :required => 'optional',
+  :calculated => true
