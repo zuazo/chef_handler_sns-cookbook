@@ -1,9 +1,9 @@
 Description
 ===========
 [![Cookbook Version](https://img.shields.io/cookbook/v/chef_handler_sns.svg?style=flat)](https://supermarket.chef.io/cookbooks/chef_handler_sns)
-[![Build Status](http://img.shields.io/travis/onddo/chef_handler_sns-cookbook.svg?style=flat)](https://travis-ci.org/onddo/chef_handler_sns-cookbook)
+[![Build Status](http://img.shields.io/travis/zuazo/chef_handler_sns-cookbook.svg?style=flat)](https://travis-ci.org/zuazo/chef_handler_sns-cookbook)
 
-Chef cookbook to install and enable [chef-handler-sns](http://onddo.github.io/chef-handler-sns/): A simple Chef report handler that reports status of a Chef run through [Amazon SNS](http://aws.amazon.com/sns/). Includes IAM roles support.
+Chef cookbook to install and enable [chef-handler-sns](http://zuazo.github.io/chef-handler-sns/): A simple Chef report handler that reports status of a Chef run through [Amazon SNS](http://aws.amazon.com/sns/). Includes IAM roles support.
 
 [Amazon SNS](http://aws.amazon.com/sns/) can send notifications by SMS, email, [Amazon SQS](http://aws.amazon.com/sqs/) queues or to any HTTP endpoint.
 
@@ -130,7 +130,7 @@ To include this cookbook directly in your run list, you must set at least the `t
 
 ```json
 {
-  "name": "git.onddo.com",
+  "name": "git.zuazo.org",
   [...]
   "normal": {
     "chef_handler_sns": {
@@ -178,27 +178,28 @@ end
 Testing
 =======
 
-See [TESTING.md](https://github.com/onddo/chef_handler_sns-cookbook/blob/master/TESTING.md).
+See [TESTING.md](https://github.com/zuazo/chef_handler_sns-cookbook/blob/master/TESTING.md).
 
 Contributing
 ============
 
-Please do not hesitate to [open an issue](https://github.com/onddo/chef_handler_sns-cookbook/issues/new) with any questions or problems.
+Please do not hesitate to [open an issue](https://github.com/zuazo/chef_handler_sns-cookbook/issues/new) with any questions or problems.
 
-See [CONTRIBUTING.md](https://github.com/onddo/chef_handler_sns-cookbook/blob/master/CONTRIBUTING.md).
+See [CONTRIBUTING.md](https://github.com/zuazo/chef_handler_sns-cookbook/blob/master/CONTRIBUTING.md).
 
 TODO
 ====
 
-See [TODO.md](https://github.com/onddo/chef_handler_sns-cookbook/blob/master/TODO.md).
+See [TODO.md](https://github.com/zuazo/chef_handler_sns-cookbook/blob/master/TODO.md).
 
 License and Author
 ==================
 
 |                      |                                          |
 |:---------------------|:-----------------------------------------|
-| **Author:**          | Xabier de Zuazo (<xabier@onddo.com>)
-| **Copyright:**       | Copyright (c) 2014 Onddo Labs, SL. (www.onddo.com)
+| **Author:**          | Xabier de Zuazo (<xabier@zuazo.org>)
+| **Copyright:**       | Copyright (c) 2015, Xabier de Zuazo
+| **Copyright:**       | Copyright (c) 2014, Onddo Labs, SL.
 | **License:**         | Apache License, Version 2.0
 
     Licensed under the Apache License, Version 2.0 (the "License");

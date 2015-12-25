@@ -1,9 +1,9 @@
 # encoding: UTF-8
 #
 # Cookbook Name:: chef_handler_sns
-# Author:: Xabier de Zuazo (<xabier@onddo.com>)
+# Author:: Xabier de Zuazo (<xabier@zuazo.org>)
 # Provider:: default
-# Copyright:: Copyright (c) 2014 Onddo Labs, SL. (www.onddo.com)
+# Copyright:: Copyright (c) 2014 Onddo Labs, SL.
 # License:: Apache License, Version 2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
