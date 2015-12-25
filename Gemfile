@@ -9,7 +9,7 @@ end
 
 group :test do
   gem 'chef-sugar' # required by xml[1.2.6]->chef-sugar cookbook
-  gem 'berkshelf', '~> 2.0'
+  gem 'berkshelf', '~> 4.0'
   gem 'chefspec', '~> 4.0'
   gem 'foodcritic', '~> 3.0'
 end
