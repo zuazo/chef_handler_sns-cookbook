@@ -1,6 +1,6 @@
 Description
 ===========
-[![Cookbook Version](https://img.shields.io/cookbook/v/chef_handler_sns.svg?style=flat)](https://community.opscode.com/cookbooks/chef_handler_sns)
+[![Cookbook Version](https://img.shields.io/cookbook/v/chef_handler_sns.svg?style=flat)](https://supermarket.chef.io/cookbooks/chef_handler_sns)
 [![Build Status](http://img.shields.io/travis/onddo/chef_handler_sns-cookbook.svg?style=flat)](https://travis-ci.org/onddo/chef_handler_sns-cookbook)
 
 Chef cookbook to install and enable [chef-handler-sns](http://onddo.github.io/chef-handler-sns/): A simple Chef report handler that reports status of a Chef run through [Amazon SNS](http://aws.amazon.com/sns/). Includes IAM roles support.
@@ -14,8 +14,8 @@ Requirements
 
 ## Cookbooks:
 
-* [xml](https://community.opscode.com/cookbooks/xml)
-* [chef_handler](https://community.opscode.com/cookbooks/chef_handler)
+* [xml](https://supermarket.chef.io/cookbooks/xml)
+* [chef_handler](https://supermarket.chef.io/cookbooks/chef_handler)
 
 Attributes
 ==========

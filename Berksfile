@@ -2,7 +2,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-source 'https://supermarket.getchef.com'
+source 'https://supermarket.chef.io'
 my_cookbook = 'chef_handler_sns'
 
 # Berkshelf helper to include a local cookbook from disk.
