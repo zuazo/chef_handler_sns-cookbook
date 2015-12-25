@@ -9,6 +9,7 @@ group :test do
   gem 'berkshelf', '~> 3.1'
   if RUBY_VERSION < '2'
     gem 'varia_model', '~> 0.4.0'
+    gem 'ohai', '~> 7.4'
   end
 end
 
