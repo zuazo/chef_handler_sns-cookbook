@@ -204,19 +204,21 @@ action :enable do
         "chef-handler-sns not found inside Bundler path: #{bundle_path}"
       )
     end
+  elsif Gem::Specification.respond_to?('find_by_name')
+    gem_spec = Gem::Specification.find_by_name('chef-handler-sns')
+    sns_handler_path = gem_spec.lib_dirs_glob unless gem_spec.nil?
   else
-    sns_handler_path =
-      if Gem::Specification.respond_to?('find_by_name')
-        Gem::Specification.find_by_name('chef-handler-sns').lib_dirs_glob
-      else
-        Gem.all_load_paths.grep(/chef-handler-sns/).first
-      end
+    sns_handler_path = Gem.all_load_paths.grep(/chef-handler-sns/).first
   end
 
   converge_by("Install #{new_resource}") do
     # Then activate the handler with the `chef_handler` LWRP
     chef_handler 'Chef::Handler::Sns' do
-      source "#{sns_handler_path}/chef/handler/sns"
+      if sns_handler_path.nil?
+        source 'chef/handler/sns'
+      else
+        source "#{sns_handler_path}/chef/handler/sns"
+      end
       arguments argument_array
       supports chef_handler_supports
       action :enable
