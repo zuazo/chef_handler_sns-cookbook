@@ -178,6 +178,9 @@ action :enable do
     chef_gem 'chef-handler-sns' do
       version gem_version
       options gem_options
+      if Chef::Resource::ChefGem.method_defined?(:compile_time)
+        compile_time true
+      end
     end
   else
     gem_package('chef-handler-sns') do
