@@ -6,11 +6,7 @@ source 'https://rubygems.org'
 
 group :test do
   gem 'rake'
-  gem 'berkshelf', '~> 3.1'
-  if RUBY_VERSION < '2'
-    gem 'varia_model', '~> 0.4.0'
-    gem 'ohai', '~> 7.4'
-  end
+  gem 'berkshelf', '~> 4.0'
 end
 
 group :style do
