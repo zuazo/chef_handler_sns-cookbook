@@ -64,6 +64,10 @@ def gem_prerelease
   gem_version.kind_of?(String) and gem_version.match(/^[0-9.]+$/) != true
 end
 
+def gem_options
+  gem_prerelease ? '--prerelease' : nil
+end
+
 def whyrun_supported?
   true
 end
@@ -92,12 +96,12 @@ action :enable do
   elsif defined?(Chef::Resource::ChefGem)
     chef_gem 'chef-handler-sns' do
       version gem_version
-      options(:prerelease => true) if gem_prerelease
+      options gem_options
     end
   else
     gem_package('chef-handler-sns') do
       version gem_version
-      options(:prerelease => true) if gem_prerelease
+      options gem_options
       action :nothing
     end.run_action(:install)
   end
