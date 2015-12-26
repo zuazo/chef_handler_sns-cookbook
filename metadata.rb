@@ -28,7 +28,7 @@ status of a Chef run through Amazon SNS. Includes IAM roles support. Amazon SNS
 can send notifications by SMS, email, Amazon SQS queues or to any HTTP endpoint.
 EOS
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '1.1.1' # WiP
+version '2.0.0'
 
 depends 'xml'
 depends 'chef_handler'
