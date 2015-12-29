@@ -150,9 +150,19 @@ action :enable do
   argument_array[:subject] = subject unless subject.nil?
   argument_array[:body_template] = body_template unless body_template.nil?
 
-  # Install nokogiri dependency if required
-  unless gem_version.is_a?(String) && gem_version.split('.', 2)[0].to_i < 1
-    @run_context.include_recipe 'xml::ruby'
+  # Use older version of the cookbook for versions that require nokogiri:
+  if gem_version.is_a?(String) && gem_version.split('.', 2)[0].to_i < 2
+    fail <<-EOE
+
+chef_handler_sns cookbook version `3` only supports chef-handler-sns `>= 2`.
+
+If you need to use older versions of chef-handler-sns gem, you have to use
+older cookbook versions. For example:
+
+# Berksfile
+cookbook 'chef_handler_sns', '~> 2.0'
+
+    EOE
   end
 
   # Install the `chef-handler-sns` RubyGem during the compile phase

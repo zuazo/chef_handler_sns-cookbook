@@ -30,7 +30,6 @@ EOS
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '2.1.0' # WiP
 
-depends 'xml'
 depends 'chef_handler'
 
 recipe 'chef_handler_sns::default', 'Installs and loads the Chef SNS Handler.'

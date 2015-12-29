@@ -41,8 +41,8 @@ describe 'chef_handler_sns resource' do
       .to receive(:find_by_name).with('chef-handler-sns').and_return(gemspec)
   end
 
-  it 'includes xml::ruby recipe' do
-    expect(chef_run).to include_recipe('xml::ruby')
+  it 'does not include xml::ruby recipe' do
+    expect(chef_run).to_not include_recipe('xml::ruby')
   end
 
   it 'installs chef-handler-sns gem' do

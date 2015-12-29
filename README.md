@@ -14,7 +14,6 @@ Requirements
 
 ## Cookbooks:
 
-* [xml](https://supermarket.chef.io/cookbooks/xml)
 * [chef_handler](https://supermarket.chef.io/cookbooks/chef_handler)
 
 Attributes
@@ -163,16 +162,14 @@ chef_handler_sns 'arn:aws:sns:us-east-1:12341234:MyTopicName' do
 end
 ```
 
-### Installing old versions
+### Installing Old Versions
 
-If you are not using IAM roles and you don't need to use AWS security tokens, you can use old versions of `chef-handler-sns` (`< 1.0.0`). Those versions does not require `nokogiri`, so they have lighter dependencies and take less time to install.
+If you want to install `chef-handler-sns` gem versions older than version `2`, you can use previous cookbook versions:
 
 ```ruby
-chef_handler_sns 'arn:aws:sns:us-east-1:12341234:MyTopicName' do
-  access_key '***AMAZON-KEY***'
-  secret_key '***AMAZON-SECRET***'
-  version '0.2.6'
-end
+# Berksfile
+
+cookbook 'chef_handler_sns', '~> 2.0'
 ```
 
 Testing
