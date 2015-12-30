@@ -14,7 +14,17 @@ Requirements
 
 ## Supported Platforms
 
-TBD.
+* Amazon Linux
+* CentOS
+* Debian
+* Fedora
+* FreeBSD
+* openSUSE
+* Oracle Linux
+* RedHat
+* Scientific Linux
+* SUSE
+* Ubuntu
 
 ## Required Cookbooks
 

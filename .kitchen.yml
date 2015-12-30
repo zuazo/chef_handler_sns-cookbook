@@ -6,15 +6,34 @@ provisioner:
   name: chef_solo
 
 platforms:
-  - name: ubuntu-12.04
-  - name: centos-6.4
+- name: centos-5.11
+- name: centos-6.7
+- name: centos-7.2
+- name: debian-6.0.10
+- name: debian-7.9
+- name: debian-8.2
+- name: fedora-21
+- name: fedora-22
+- name: fedora-23
+# FreeBSD platform requires to run kitchen verify twice by hand
+# - name: freebsd-9.2
+#   driver_config:
+#     box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_freebsd-9.2_chef-provisionerless.box
+- name: freebsd-10.2
+- name: opensuse-13.2
+  driver_config:
+    box: opscode-opensuse-13.2
+    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_opensuse-13.2-x86_64_chef-provisionerless.box
+- name: ubuntu-10.04
+- name: ubuntu-12.04
+- name: ubuntu-14.04
+- name: ubuntu-15.04
 
 suites:
-  - name: default
-    run_list:
-      - recipe[chef_handler_sns::default]
-    attributes:
-      chef_handler_sns:
-        topic_arn: <%= ENV['AWS_TOPIC_ARN'] || "arn:aws:sns:us-east-1:12341234:MyTopicName" %>
-        access_key: <%= ENV['AWS_ACCESS_KEY_ID'] %>
-        secret_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+- name: default
+  run_list: recipe[chef_handler_sns]
+  attributes:
+    chef_handler_sns:
+      topic_arn: <%= ENV['AWS_TOPIC_ARN'] || 'arn:aws:sns:us-east-1:12341234:MyTopicName' %>
+      access_key: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+      secret_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>

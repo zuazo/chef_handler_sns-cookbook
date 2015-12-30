@@ -30,6 +30,18 @@ EOS
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '2.1.0' # WiP
 
+supports 'amazon'
+supports 'centos'
+supports 'debian'
+supports 'fedora'
+supports 'freebsd'
+supports 'opensuse'
+supports 'oracle'
+supports 'redhat'
+supports 'scientific'
+supports 'suse'
+supports 'ubuntu'
+
 depends 'chef_handler'
 
 recipe 'chef_handler_sns::default', 'Installs and loads the Chef SNS Handler.'
