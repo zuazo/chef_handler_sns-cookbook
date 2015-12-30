@@ -144,15 +144,15 @@ To include this cookbook directly in your run list, you must set at least the `t
 ```json
 {
   "name": "git.zuazo.org",
-  [...]
+  "[...]": "[...]",
   "normal": {
     "chef_handler_sns": {
       "topic_arn": "arn:aws:sns:us-east-1:12341234:MyTopicName"
     }
   },
   "run_list": [
-    [...]
-    "recipe[chef_handler_sns]"
+    "recipe[chef_handler_sns]",
+    "[...]": "[...]"
   ]
 }
 ```
