@@ -191,13 +191,6 @@ Testing
 
 See [TESTING.md](https://github.com/zuazo/chef_handler_sns-cookbook/blob/master/TESTING.md).
 
-Contributing
-============
-
-Please do not hesitate to [open an issue](https://github.com/zuazo/chef_handler_sns-cookbook/issues/new) with any questions or problems.
-
-See [CONTRIBUTING.md](https://github.com/zuazo/chef_handler_sns-cookbook/blob/master/CONTRIBUTING.md).
-
 ## ChefSpec Matchers
 
 ### chef_handler_sns(topic_arn)
@@ -222,6 +215,13 @@ expect(chef_run).to enable_chef_handler_sns(topic_arn)
   .with_access_key('***AMAZON-KEY***')
   .with_secret_key('***AMAZON-SECRET***')
 ```
+
+Contributing
+============
+
+Please do not hesitate to [open an issue](https://github.com/zuazo/chef_handler_sns-cookbook/issues/new) with any questions or problems.
+
+See [CONTRIBUTING.md](https://github.com/zuazo/chef_handler_sns-cookbook/blob/master/CONTRIBUTING.md).
 
 TODO
 ====
