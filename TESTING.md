@@ -11,8 +11,8 @@ Testing
 * `should_not`
 * `chefspec`
 * `test-kitchen`
-* `vagrant-wrapper`
 * `kitchen-vagrant`
+* `chef-encrypted-attributes`
 
 ### Required Gems for Guard
 
@@ -47,7 +47,7 @@ You can install gem dependencies with bundler:
 
 ## Running the Integration Tests
 
-    $ bundle exec rake integration
+    $ bundle exec rake integration:vagrant
 
 Or:
 
@@ -55,26 +55,33 @@ Or:
     $ bundle exec kitchen test
     [...]
 
-## ChefSpec matchers
+### Running Integration Tests in Docker
 
-### chef_handler_sns(topic_arn)
+You need to have [Docker installed](https://docs.docker.com/installation/).
 
-Helper method for locating a `chef_handler_sns` resource in the collection.
+    $ wget -qO- https://get.docker.com/ | sh
 
-```ruby
-topic_arn = 'arn:aws:sns:us-east-1:12341234:MyTopicName'
-resource = chef_run.chef_handler_sns(topic_arn)
-expect(resource).to notify('service[apache2]').to(:reload)
-```
+Then use the `integration:docker` rake task to run the tests:
 
-### enable_chef_handler_sns(topic_arn)
+    $ bundle exec rake integration:docker
 
-Assert that the Chef run enables chef_handler_sns.
+### Running Integration Tests in the Cloud
 
-```ruby
-topic_arn = 'arn:aws:sns:us-east-1:12341234:MyTopicName'
-resource = chef_run.chef_handler_sns(topic_arn)
-expect(resource).to enable_chef_handler_sns(topic_arn).with(
-  :topic_arn => topic_arn
-)
-```
+#### Requirements
+
+* `kitchen-digitalocean`
+* `kitchen-ec2`
+
+You can run the tests in the cloud instead of using vagrant. First, you must set the following environment variables:
+
+* `AWS_TOPIC_ARN`: AWS Topic to use for tests.
+* `AWS_ACCESS_KEY_ID` (See [`kitchen-ec2` gem documentation](https://github.com/test-kitchen/kitchen-ec2#authenticating-with-aws)).
+* `AWS_SECRET_ACCESS_KEY` (See [`kitchen-ec2` gem documentation](https://github.com/test-kitchen/kitchen-ec2#authenticating-with-aws)).
+* `AWS_SSH_KEY_ID`: EC2 SSH public key name. This is the name used in Amazon EC2 Console's Key Pars section (See [`kitchen-ec2` gem documentation](https://github.com/test-kitchen/kitchen-ec2#authenticating-with-aws)).
+* `DIGITALOCEAN_ACCESS_TOKEN` (See [`kitchen-digitalocean` gem documentation](https://github.com/test-kitchen/kitchen-digitalocean#installation-and-setup)).
+* `DIGITALOCEAN_SSH_KEY_IDS`: DigitalOcean SSH numeric key IDs (See [`kitchen-digitalocean` gem documentation](https://github.com/test-kitchen/kitchen-digitalocean#installation-and-setup)).
+* `SSH_KEY_PATH`: EC2 SSH private key local full path. Only when you are not using an SSH Agent.
+
+Then use the `integration:cloud` rake task to run the tests:
+
+    $ bundle exec rake integration:cloud

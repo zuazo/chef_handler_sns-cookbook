@@ -12,7 +12,11 @@ This cookbook has been tested to work with [AWS OpsWorks](http://aws.amazon.com/
 Requirements
 ============
 
-## Cookbooks:
+## Supported Platforms
+
+TBD.
+
+## Required Cookbooks
 
 * [chef_handler](https://supermarket.chef.io/cookbooks/chef_handler)
 
@@ -65,7 +69,7 @@ Installs and enables the Chef SNS handler.
 | version       | `node['chef_handler_sns']['version']`       | chef-handler-sns gem version to install.
 | mirror_url    | `node['chef_handler_sns']['mirror_url']`    | chef-handler-sns mirror to download the gem from. For cases where you do not want to use RubyGems.
 
-AWS Credentials permissions
+AWS Credentials Permissions
 ===========================
 
 If you are using AWS IAM credentials or AWS IAM role credentials, they should have at least the following privileges:
@@ -183,6 +187,31 @@ Contributing
 Please do not hesitate to [open an issue](https://github.com/zuazo/chef_handler_sns-cookbook/issues/new) with any questions or problems.
 
 See [CONTRIBUTING.md](https://github.com/zuazo/chef_handler_sns-cookbook/blob/master/CONTRIBUTING.md).
+
+## ChefSpec Matchers
+
+### chef_handler_sns(topic_arn)
+
+Helper method for locating a `chef_handler_sns` resource in the collection.
+
+```ruby
+topic_arn = 'arn:aws:sns:us-east-1:12341234:MyTopicName'
+resource = chef_run.chef_handler_sns(topic_arn)
+
+expect(resource).to notify('service[apache2]').to(:reload)
+```
+
+### enable_chef_handler_sns(topic_arn)
+
+Assert that the Chef run enables `chef_handler_sns`.
+
+```ruby
+topic_arn = 'arn:aws:sns:us-east-1:12341234:MyTopicName'
+
+expect(chef_run).to enable_chef_handler_sns(topic_arn)
+  .with_access_key('***AMAZON-KEY***')
+  .with_secret_key('***AMAZON-SECRET***')
+```
 
 TODO
 ====
