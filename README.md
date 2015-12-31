@@ -1,6 +1,9 @@
 Description
 ===========
 [![Cookbook Version](https://img.shields.io/cookbook/v/chef_handler_sns.svg?style=flat)](https://supermarket.chef.io/cookbooks/chef_handler_sns)
+[![GitHub](http://img.shields.io/badge/github-zuazo/chef_handler_sns--cookbook-blue.svg?style=flat)](https://github.com/zuazo/chef_handler_sns-cookbook)
+[![License](https://img.shields.io/github/license/zuazo/chef_handler_sns-cookbook.svg?style=flat)](#license-and-author)
+[![Dependency Status](http://img.shields.io/gemnasium/zuazo/chef_handler_sns-cookbook.svg?style=flat)](https://gemnasium.com/zuazo/chef_handler_sns-cookbook)
 [![Build Status](http://img.shields.io/travis/zuazo/chef_handler_sns-cookbook.svg?style=flat)](https://travis-ci.org/zuazo/chef_handler_sns-cookbook)
 
 Chef cookbook to install and enable [chef-handler-sns](http://zuazo.github.io/chef-handler-sns/): A simple Chef report handler that reports status of a Chef run through [Amazon SNS](http://aws.amazon.com/sns/). Includes IAM roles support.
