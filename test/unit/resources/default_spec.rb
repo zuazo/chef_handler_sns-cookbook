@@ -81,4 +81,12 @@ describe 'chef_handler_sns resource' do
         .with_options('--prerelease')
     end
   end
+
+  context 'with gem version 1' do
+    before { node.set['chef_handler_sns']['version'] = '1.2.0' }
+
+    it 'raises an error' do
+      expect { chef_run }.to raise_error(/'chef_handler_sns', '~> 2.0'/)
+    end
+  end
 end
