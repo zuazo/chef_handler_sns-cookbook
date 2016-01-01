@@ -156,7 +156,7 @@ To include this cookbook directly in your run list, you must set at least the `t
   },
   "run_list": [
     "recipe[chef_handler_sns]",
-    "[...]": "[...]"
+    "[...]"
   ]
 }
 ```
