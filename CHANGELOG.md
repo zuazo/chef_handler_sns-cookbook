@@ -2,6 +2,36 @@
 
 This file is used to list changes made in each version of the `chef_handler_sns` cookbook.
 
+## v3.0.0 (2016-01-01)
+
+### Breaking Changes on v3.0.0
+
+* Update `chef-handler-sns` gem to version 2.
+ * Drop gem version `1` support.
+
+### Improvements on v3.0.0
+
+* Update RuboCop to `0.35`.
+* metadata: Add `source_url` and `issues_url` links.
+* Add version constraint to `chef_handler` dependency.
+
+### Documentation Changes on v3.0.0
+
+* Some documentation improvements.
+* Add a LICENSE file.
+* Add a .yardopts and a .inch.yml file.
+* Update license year.
+* README:
+ * Fix the json example.
+ * Move ChefSpec matchers to the README.
+ * Add badges: GitHub, license, gemnasium.
+
+### Changes on Tests on v3.0.0
+
+* Run test-kitchen with Travis CI native Docker support.
+* Test on multiple platforms, including using Docker and multiple clouds.
+* Move ChefSpec tests to test/unit.
+
 ## v2.0.0 (2015-12-26)
 
 ### Breaking Changes on v2.0.0
