@@ -9,9 +9,7 @@ platforms:
 - name: centos-5.11
 - name: centos-6.7
 - name: centos-7.2
-- name: debian-6.0.10
-- name: debian-7.9
-- name: debian-8.2
+- name: debian-8.7
 - name: fedora-21
 - name: fedora-22
 - name: fedora-23
