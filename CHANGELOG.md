@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of the `chef_handler_sns` cookbook.
 
-## v3.1.0 (2017-05-05)
+## v3.1.0 (unreleased)
 * Update chef_handler required version from ~> 1.0 to ~2.0
  * chef_handler 2.1.1 is compatible with chef-client 13
 
