@@ -1,6 +1,6 @@
 Description
 ===========
-[![GitHub](http://img.shields.io/badge/github-zuazo/chef_handler_sns--cookbook-blue.svg?style=flat)](https://github.com/zuazo/chef_handler_sns-cookbook)
+[![GitHub](http://img.shields.io/badge/github-zuazo/chef__handler__sns--cookbook-blue.svg?style=flat)](https://github.com/zuazo/chef_handler_sns-cookbook)
 [![License](https://img.shields.io/github/license/zuazo/chef_handler_sns-cookbook.svg?style=flat)](#license-and-author)
 
 [![Cookbook Version](https://img.shields.io/cookbook/v/chef_handler_sns.svg?style=flat)](https://supermarket.chef.io/cookbooks/chef_handler_sns)
