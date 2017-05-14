@@ -2,6 +2,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# More info at http://berkshelf.com/#the-berksfile
+
 source 'https://supermarket.chef.io'
 my_cookbook = 'chef_handler_sns'
 

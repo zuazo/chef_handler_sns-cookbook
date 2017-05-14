@@ -19,6 +19,8 @@
 # limitations under the License.
 #
 
+use_inline_resources if defined?(use_inline_resources)
+
 require 'chef/application'
 
 def topic_arn
@@ -152,7 +154,7 @@ action :enable do
 
   # Use older version of the cookbook for versions that require nokogiri:
   if gem_version.is_a?(String) && gem_version.split('.', 2)[0].to_i < 2
-    fail <<-EOE
+    raise <<-EOE
 
 chef_handler_sns cookbook version `3` only supports chef-handler-sns `>= 2`.
 

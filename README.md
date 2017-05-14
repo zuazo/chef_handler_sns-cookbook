@@ -34,6 +34,11 @@ Requirements
 
 * [chef_handler](https://supermarket.chef.io/cookbooks/chef_handler)
 
+## Required Applications
+
+* Chef `12` or higher.
+* Ruby `2.3` or higher.
+
 Attributes
 ==========
 

@@ -28,7 +28,7 @@ status of a Chef run through Amazon SNS. Includes IAM roles support. Amazon SNS
 can send notifications by SMS, email, Amazon SQS queues or to any HTTP endpoint.
 EOS
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '3.1.0' # WiP
+version '4.0.0' # WiP
 
 if respond_to?(:source_url)
   source_url "https://github.com/zuazo/#{name}-cookbook"
@@ -36,6 +36,8 @@ end
 if respond_to?(:issues_url)
   issues_url "https://github.com/zuazo/#{name}-cookbook/issues"
 end
+
+chef_version '>= 12' if respond_to?(:chef_version)
 
 supports 'amazon'
 supports 'centos'

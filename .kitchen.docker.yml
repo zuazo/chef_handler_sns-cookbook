@@ -22,6 +22,7 @@ platforms:
 - name: ubuntu-14.04
 - name: ubuntu-15.04
 - name: ubuntu-15.10
+- name: ubuntu-16.04
 
 # Non-official images
 - name: scientific-6.6
