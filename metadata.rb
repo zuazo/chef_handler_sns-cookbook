@@ -51,7 +51,7 @@ supports 'scientific'
 supports 'suse'
 supports 'ubuntu'
 
-depends 'chef_handler', '~> 1.0'
+depends 'chef_handler', '~> 2.0'
 
 recipe 'chef_handler_sns::default', 'Installs and loads the Chef SNS Handler.'
 
