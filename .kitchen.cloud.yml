@@ -22,11 +22,6 @@ platforms:
   driver_config:
     flavor: 512MB
 
-- name: debian-6-0-x64
-  driver_plugin: digitalocean
-  driver_config:
-    flavor: 512MB
-
 - name: debian-7-0-x64
   driver_plugin: digitalocean
   driver_config:
